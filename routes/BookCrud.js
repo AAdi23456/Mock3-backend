@@ -6,7 +6,7 @@ BookRoute.post("/addnew",async(req,res)=>{
     try {
       
         const { Title, Author,  Genre, Description, Price}=req.body
-        
+        console.log(req.body)
           const DataToDb=new BooksModel({Title, Author,  Genre, Description, Price})
     await DataToDb.save()
            return res.status(200).json({res:"Book Added successfully"})
